@@ -6,7 +6,7 @@ email: huxpro@gmail.com
 description: "Cool Blog"
 keyword: ""
 url: "http://huangxuan.me"              # your host, for absolute URL
-baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/wolfdu-blog"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
@@ -58,17 +58,17 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
+# ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
-ga_track_id:             # Format: UA-xxxxxx-xx
-ga_domain:
+# ga_track_id:             # Format: UA-xxxxxx-xx
+# ga_domain:
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "写写代码，读读书，看看电影。世界那么大，多玩玩看看。"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar:      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
