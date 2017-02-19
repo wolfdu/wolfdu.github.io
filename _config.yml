@@ -1,8 +1,8 @@
 # Site settings
 title: Wolfdu Blog                      #your blog title
-SEOTitle: 你的博客 | Your Blog
+SEOTitle: 阿杜的博客 | Wolfdu Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: yhdu35@foxmail.com
 description: "Cool Blog"
 keyword: ""
 url: "https://wolfdu.github.io/"              # your host, for absolute URL
@@ -67,7 +67,7 @@ duoshuo_share: true                     # set to false if you want to use Commen
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写写代码，读读书，看看电影。世界那么大，多玩玩看看。"
+sidebar-about-description: "写写代码，听听音乐，看看电影。世界那么大，多玩玩看看。"
 sidebar-avatar:      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
