@@ -94,11 +94,11 @@ Jekyll是一个静态网站生产器（static website generator）。
 
 想要通过jekyll new一个工程需要安装bundler
 	
-	gem install bundler
+	$ gem install bundler
 
 安装成功后创建jekyll工程：
 	
-	jekyll new myblog
+	$ jekyll new myblog
 
 目录下会生成如下结构文件：
 ![java-javascript](/img/in-post/post-js-version/new-jekyll-doc.png)
@@ -108,8 +108,8 @@ _config.yml是配置文件，包含所有的配置信息
 
 Jekyll 会为我们提供一篇默认的博客，运行如下命令就可以在本地查看了：
 	
-	cd myblog/
-	jekyll serve
+	$ cd myblog/
+	$ jekyll serve
 
 注意：此时myblog文件夹下会增加_site文件夹，包含了生成网站的所有结构。
 源文件夹名头没有下划线的文件夹会被复制到_site文件夹中，如css，js等文件。
