@@ -4,9 +4,9 @@ title:      "Welcome to Wolfdu Blog"
 subtitle:   " \"Hello World, Hello Blog\""
 date:       2017-02-17 16:59:00
 author:     "Wolfdu"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/in-post/helloBlog-home.jpg"
 tags:
-    - 生活
+    - 前端开发
 ---
 
 > “Yeah It's on. ”
@@ -58,7 +58,7 @@ Wolfdu 的 Blog 就这嘛开通了！！！
 先记录一下本次搭建的流程吧，具体哪个地方遇到坑了再挑出来说。
 
 1.首先当然是在github中创建一个基于你的用户名的repository如：useName.github.io的repository。
-![java-javascript](/img/in-post/post-js-version/github-pages-URL.jpg)
+![java-javascript](/img/in-post/helloBlog/github-pages-URL.jpg)
 <small class="img-hint">URL for User Pages</small>
 这样你就可以clone到本地随意的修改了。
 
@@ -101,7 +101,7 @@ Jekyll是一个静态网站生产器（static website generator）。
 	$ jekyll new myblog
 
 目录下会生成如下结构文件：
-![java-javascript](/img/in-post/post-js-version/new-jekyll-doc.png)
+![java-javascript](/img/in-post/helloBlog/new-jekyll-doc.png)
 
 _config.yml是配置文件，包含所有的配置信息
 具体的配置修改可参见 [jekyllcd](http://jekyllcn.com/)

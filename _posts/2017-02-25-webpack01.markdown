@@ -1,0 +1,156 @@
+---
+layout:     post
+title:      "webpack学习笔记（一）"
+subtitle:   " \"Webpack Leaning Notes\""
+date:       2017-02-25 09:57:00
+author:     "Wolfdu"
+header-img: "img/in-post/webpack01/webpack-home.jpg"
+tags:
+    - webpack
+---
+
+> 本文仅为学习过程笔记
+
+## webpack是什么东西？？？
+
+用官方解释是，“*webpack*是JavaScript应用程序的*模块打包器（module bundler）*。”
+但是我认为它通过配置文件可以达到对所有的前端代码进行管理。
+首先我们需要了解webpack中的几个核心概念。
+
+> 文中webpack2.x，该版本对es6模块原生支持。
+
+## 核心概念
+
+### Entry
+
+*入口起点（entry point）*：是webpack建立应用程序*依赖关系图（dependency graph）*的起点。
+入口起点告诉webpack从哪里开始，并遵循着依赖关系图表进行打包。
+可以将入口起点认为是**根上下文**或者**第一个启动文件**。
+
+使用webpack[配置对象(webpack configuration object)](https://doc.webpack-china.org/configuration/)中的entry属性来定义入口。
+
+webpack.config.js:
+
+	module.exports = {
+		entry: './app/entry.js'
+	};
+
+还可以传入一个数组，对象进行配置。
+
+[更多Entry相关配置](https://doc.webpack-china.org/concepts/entry-points/)
+
+### Output
+
+在建立了应用中依赖关系图表并且找到了相应的资源（assets）后，我们需要告诉webpack在哪里打包我们的应用程序。
+webpack中的output属性就描述了如何处理compilation后的代码。
+*即使可以存在多个entry配置，但是只能指定一个output配置。*
+
+webpack.config.js:
+
+	const path = require('path');
+
+	module.exports = {
+		entry: './app/entry.js',
+		output: {
+			path: path.resolve(__dirname,'dist'),
+			filename: 'bundle.js'
+		}
+	}
+
+正如上面的代码中，我们通过output.path（对应一个绝对路径）和output.filename描述了webpack bundle，最后在webpack打包完成后会在当前webpack.config.js路径下的dist文件夹下生成bundle.js文件。
+若webpack.config.js在根目录下output路径为：./dist/bundle.js
+
+[更多output相关配置](https://doc.webpack-china.org/concepts/output/)
+
+### Loader
+
+webpack将应用中每个文件（.css, .html, .scss, .jgp）都当做模块来处理。而且webpack只理解JavaScript。
+webpack会将这些文件转换为模块，转换后的文件会被添加到依赖图表(最终添加到bundle中)。
+
+是时候放出这张图了：
+![java-javascript](/img/in-post/webpack01/webpack-loader.png)
+<small class="img-hint">[对就是官网的那张图](https://webpack.js.org/)</small>
+
+webpack.config.js:
+	
+	const path = require('path');
+
+	const config = {
+		entry: './app/entry.js',
+		output: {
+			path: path.resolve(__dirname,'dist'),
+			filename: 'bundle.js'
+		},
+		module: {
+			rules: [
+			   {test: /\.(js|jsx)$/, use:'babel-loader'}
+			]
+		}
+	};
+
+	module.exports = config;
+
+如上配置中对module对象定义rules属性，其中module.rules属性包含两个必须属性：test和use。
+
+这样，在webpack编译器（compiler）遇到require()/import语句中解析为'.js'和'.jsx'的路径时，会将他们先使用babel-loader转换，再添加并打包。
+
+[更多Loader相关配置](https://doc.webpack-china.org/concepts/)
+
+### Plugins
+
+插件主要目的在于解决Loader无法实现的事情。
+Loader仅在每个文件的基础上执行转换，Plugin常用在在打包模块生命周期中执行的操作和自定义功能。
+
+配置一个你想要使用的插件，你只需要require()它，然后把它添加到plugins数组中。多数插件可以通过选项进行自定义。
+由于需要在一个配置中多次使用一个插件，来针对不同目的，因此你需要new来创建实例，并且通过实例来调用插件。
+
+webpack.config.js:
+
+	const HtmlWebpackPlugin = require('html-webpack-plugin');
+	const path = require('path');
+
+	const config = {
+		entry: './app/entry.js',
+		output: {
+			path: path.resolve(__dirname,'dist'),
+			filename: 'bundle.js'
+		},
+		module: {
+			rules: [
+			  {
+			  	test: /\.(js|jsx)$/,
+			  	use: 'babel-loader'
+			  }
+			]
+		},
+		plugins: [
+		  new HtmlWebpackPlugin({
+			title: 'My blog',
+			template: 'views/template.html'
+		  })
+		]
+	};
+
+	module.exports = config;
+
+webpack中有很多开箱即用的插件，插件还有很多的配置方法这里只是简单的使用。
+
+[更多Plugin相关的配置](https://doc.webpack-china.org/concepts/plugins/)
+
+### PS
+
+由于webpack2.x对es6模块的原生支持，这也意味着可以直接使用import以及export，而不必通过CommonJS模块加载了。
+如果希望同时使用babel，则需要配置babel使其不会强制解析这部分。
+
+.babelrc
+
+	{
+	  "presets": [
+	    ["es2015", { "modules": false }]
+	  ]
+	}
+
+## 小结
+
+在了解了上述核心概念后，我们基本上可以通过webpack来帮助我们在项目中合理的引入依赖资源进行开发和打包了。
+还有更多细节和使用技巧，待日后慢慢记录。
