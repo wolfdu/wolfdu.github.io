@@ -5,6 +5,7 @@ subtitle:   " \"Hello World, Hello Blog\""
 date:       2017-02-17 16:59:00
 author:     "Wolfdu"
 header-img: "img/in-post/helloBlog/helloBlog-home.jpg"
+catalog:    true
 tags:
     - 前端开发
 ---

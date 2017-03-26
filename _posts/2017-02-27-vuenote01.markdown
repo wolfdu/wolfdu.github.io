@@ -1,0 +1,304 @@
+---
+layout:     post
+title:      "Vue学习笔记（一）"
+subtitle:   " \"Vue Leaning Notes\""
+date:       2017-02-25 09:57:00
+author:     "Wolfdu"
+header-img: "img/in-post/webpack01/webpack-home.jpg"
+tags:
+    - Vue
+---
+
+> 本文仅为vue2.0学习过程的一些简单笔记笔记以便翻阅
+
+
+## prop属性：
+
+组件实例的作用域是孤立的。如果子组件内想使用父组件数据，我们就需要在子组件使用prop来传递数据。
+prop 是父组件用来传递数据的一个自定义属性。子组件需要显式地用 props 选项声明 “prop”：
+
+以下是prop的相关验证：
+	
+	Vue.component('example', {
+	  	props: {
+	    // 基础类型检测 （`null` 意思是任何类型都可以）
+	    propA: Number,
+	    // 多种类型
+	    propB: [String, Number],
+	    // 必传且是字符串
+	    propC: {
+	      type: String,
+	      required: true
+	    },
+	    // 数字，有默认值
+	    propD: {
+	      type: Number,
+	      default: 100
+	    },
+	    // 数组／对象的默认值应当由一个工厂函数返回
+	    propE: {
+	      type: Object,
+	      default: function () {
+	        return { message: 'hello' }
+	      }
+	    },
+	    // 自定义验证函数
+	    propF: {
+	      validator: function (value) {
+	        return value > 10
+	      }
+	    }
+	  }
+	})
+
+[*vue2 props API*](http://cn.vuejs.org/v2/api/#props)
+
+
+## 组件
+
+一个组件下只能有一个并列的div
+
+data必须是函数(*如下为单文件组件中格式*)：
+
+	<script>
+		export default {
+			data () {
+				return {
+					msg: 'hello vue!'
+				}
+			}
+		}
+	</script>
+
+[*单文件组件（.vue）*](http://cn.vuejs.org/v2/guide/single-file-components.html#针对刚接触-JavaScript-模块开发系统的用户)
+
+
+
+## ESLint
+ESLint 是一个开源的 JavaScript 代码检查工具。
+
+反正我没用（*苦笑*）后面再研究研究[ESLint](http://eslint.cn/)，对于团队开发这个应该是个神器。
+
+## Vue实例生命周期
+每个 Vue 实例在被创建之前都要经过一系列的初始化过程。
+
+例如，实例需要配置数据观测(data observer)、编译模版、挂载实例到 DOM ，然后在数据变化时更新 DOM 。在这个过程中，实例也会调用一些 生命周期钩子 ，这就给我们提供了执行自定义逻辑的机会。
+
+简单粗暴先上图：
+
+![java-javascript](/img/in-post/vue01/lifecycle.png)
+<small class="img-hint">Vue Life Cycle</small>
+
+以下通过代码来观察生命周期钩子函数的运行情况：
+
+### beforeCreate:
+在实例初始化之后，数据观测(data observer) 和 event/watcher 事件配置之前被调用。
+	    
+		beforeCreate: function () {
+               console.group('beforeCreate 创建前状态===============》');
+               console.log("%c%s", "color:red" , "el     : " + this.$el); //undefined
+               console.log("%c%s", "color:red","data   : " + this.$data); //undefined 
+        }
+
+console：
+	
+	beforeCreate 创建前状态===============》
+		 el     : undefined
+		 data   : undefined
+
+### created
+实例已经创建完成之后被调用。在这一步，实例已完成以下的配置：数据观测(data observer)，属性和方法的运算， watch/event 事件回调。然而，挂载阶段还没开始，$el 属性目前不可见。
+
+        created: function () {
+            console.group('created 创建完毕状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el); //undefined
+            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化 
+        }
+
+console:
+	
+	created 创建完毕状态===============》
+		 el     : undefined
+		 data   : [object Object]
+
+### beforeMount
+在挂载开始之前被调用：相关的 render 函数首次被调用。
+
+        beforeMount(){
+			console.group('beforeMount 挂载前状态===============》');
+            console.log("%c%s", "color:red","el     : " + (this.$el)); //已被初始化
+            console.log(this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化  
+		}
+
+console:
+
+	beforeMount 挂载前状态===============》
+		 el     : undefined
+		 undefined
+		 data   : [object Object]
+
+### mounted
+el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用该钩子。如果 root 实例挂载了一个文档内元素，当 mounted 被调用时 vm.$el 也在文档内。
+
+        mounted: function () {
+            console.group('mounted 挂载结束状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el); //已被初始化
+            console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
+        }
+
+console:
+	
+	mounted 挂载结束状态===============》
+		 el     : [object Comment]
+		 data   : [object Object]
+
+### beforeUpdate
+当data中数据被修改后：
+数据更新时调用，发生在虚拟 DOM 重新渲染和打补丁之前。
+
+你可以在这个钩子中进一步地更改状态，这不会触发附加的重渲染过程。
+
+        beforeUpdate: function () {
+            console.group('beforeUpdate 更新前状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log("%c%s", "color:red","data   : " + this.$data); 
+        }
+
+console:
+
+	beforeUpdate 更新前状态===============》
+		 el     : [object Comment]
+		 data   : [object Object]
+
+### updated
+当data中数据被修改后：
+由于数据更改导致的虚拟 DOM 重新渲染和打补丁，在这之后会调用该钩子。
+
+当这个钩子被调用时，组件 DOM 已经更新，所以你现在可以执行依赖于 DOM 的操作。然而在大多数情况下，你应该避免在此期间更改状态，因为这可能会导致更新无限循环。
+
+        updated: function () {
+            console.group('updated 更新完成状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el); 
+            console.log("%c%s", "color:red","data   : " + this.$data); 
+        }
+
+console:
+	
+	updated 更新完成状态===============》
+		 el     : [object HTMLDivElement]
+		 <div>​…​</div>​
+		 data   : [object Object]
+
+### beforeDestroy
+实例销毁之前调用。在这一步，实例仍然完全可用。
+
+        beforeDestroy: function () {
+            console.group('beforeDestroy 销毁前状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el);    
+            console.log("%c%s", "color:red","data   : " + this.$data); 
+        }
+
+console:
+
+	beforeDestroy 销毁前状态===============》
+		 el     : [object HTMLDivElement]
+		 <div>​…​</div>​
+		 data   : [object Object]
+
+### destroyed
+Vue 实例销毁后调用。调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁。
+
+        destroyed: function () {
+            console.group('destroyed 销毁完成状态===============》');
+            console.log("%c%s", "color:red","el     : " + this.$el);
+            console.log(this.$el);  
+            console.log("%c%s", "color:red","data   : " + this.$data); 
+        }
+
+console:
+	
+	destroyed 销毁完成状态===============》
+		 el     : [object HTMLDivElement]
+		 <div>​…​</div>​
+		 data   : [object Object]
+
+应结合各个钩子函数的状态和实际场景进行使用。
+
+具体场景慢慢发现吧！！！
+
+## router钩子
+正如其名，vue-router 提供的导航钩子主要用来拦截导航，让它完成跳转或取消。有多种方式可以在路由导航发生时执行钩子：全局的, 单个路由独享的, 或者组件级的。
+
+### beforeEach(*全局钩子*)
+可以使用*beforeEach*注册一个全局的before钩子。
+同样可以注册一个全局的 after 钩子，不过它不像 before 钩子那样，after 钩子没有 next 方法，不能改变导航。
+
+这里用配置[*nprogress*](https://github.com/rstacruz/nprogress)插件来进行简单的演示：
+	
+	import Nprogress from 'nprogress'
+	import 'nprogress/nprogress.css'
+
+	const router = new VueRouter({ ... })
+	// 简单配置
+	Nprogress.inc(0.4)
+	Nprogress.configure({ easing: 'ease', speed: 1000, showSpinner: true })
+
+	//to(Route):即将要进入的目标路由对象
+	//from(Route):当前导航正要离开的路由
+	//next(Function):resolve当前钩子，执行管道中下一个钩子或者中断当前导航等
+	router.beforeEach((to,from,next) => {
+	  Nprogress.start()
+	  next()
+	})
+
+	router.afterEach(() => {
+	  Nprogress.done()
+	})
+
+这样就可以简单配置上nprogress了，具体的一些样式修改这样直接修改nprogress的css文件。
+
+### 组件内的钩子
+
+
+ * beforeRouteEnter
+ * beforeRouteUpdate
+ * beforeRouteLeave
+
+---
+
+	const Foo = {
+	  template: `...`,
+	  beforeRouteEnter (to, from, next) {
+	    // 在渲染该组件的对应路由被 confirm 前调用
+	    // 不！能！获取组件实例 `this`
+	    // 因为当钩子执行前，组件实例还没被创建
+	  },
+	  beforeRouteUpdate (to, from, next) {
+	    // 在当前路由改变，但是该组件被复用时调用
+	    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+	    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+	    // 可以访问组件实例 `this`
+	  },
+	  beforeRouteLeave (to, from, next) {
+	    // 导航离开该组件的对应路由时调用
+	    // 可以访问组件实例 `this`
+	  }
+	}
+
+[*关于router钩子的更多信息*](https://router.vuejs.org/zh-cn/advanced/navigation-guards.html)
+
+## transition
+
+关于过度效果苦恼了我几天，终于让我给解决了。
+感觉[过度效果](http://cn.vuejs.org/v2/guide/transitions.html)，[状态](http://cn.vuejs.org/v2/guide/transitioning-state.html)这些还要多研究研究。
+
+
+## compute
+
+[*官网上已经说了再清楚不过了*](http://cn.vuejs.org/v2/guide/computed.html#Computed-属性-vs-Watched-属性)
+记得用就好了。
+
+
