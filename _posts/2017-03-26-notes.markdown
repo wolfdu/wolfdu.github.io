@@ -1,3 +1,15 @@
+---
+layout:     post
+title:      "好记性不如烂blog"
+subtitle:   " \"some notes\""
+date:       2017-03-26 09:57:00
+author:     "Wolfdu"
+header-img: "img/in-post/notes/notes-home.jpg"
+catalog:    true
+tags:
+    - note
+---
+
 # git
 
 代理设置:

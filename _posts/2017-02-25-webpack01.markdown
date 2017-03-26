@@ -5,6 +5,7 @@ subtitle:   " \"Webpack Leaning Notes\""
 date:       2017-02-25 09:57:00
 author:     "Wolfdu"
 header-img: "img/in-post/webpack01/webpack-home.jpg"
+catalog:    true
 tags:
     - webpack
 ---

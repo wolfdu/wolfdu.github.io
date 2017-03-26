@@ -4,7 +4,8 @@ title:      "Vue学习笔记（一）"
 subtitle:   " \"Vue Leaning Notes\""
 date:       2017-02-25 09:57:00
 author:     "Wolfdu"
-header-img: "img/in-post/webpack01/webpack-home.jpg"
+header-img: "img/in-post/vue01/vue-home.jpg"
+catalog:    true
 tags:
     - Vue
 ---
