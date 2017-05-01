@@ -86,5 +86,8 @@ friends: [
     },{
         title: "Code Dog",
         href: "http://blog.codedoge.com/"
+  },{
+      title: "mrmeisen",
+      href: "https://mrmeisen.github.io/"
   }
 ]
