@@ -4,7 +4,7 @@ title:      "纵观JavaScript ES6 核心特性"
 subtitle:   " \"ECMAScript 6 Or ES2015+\""
 date:       2017-04-25 13:57:00
 author:     "Wolfdu"
-header-img: "img/in-post/notes/es6-translate-home.jpg"
+header-img: "img/in-post/ES6-features-translate/es6-translate-home.jpg"
 catalog:    true
 tags:
     - Translate
@@ -20,7 +20,7 @@ JavaScript 在最近几年发生了相当大的变化。这里有12个你可以�
 新增加的语言被称作ECMAScript 6，同时也可以称为ES6或者ES2015+。
 
 JavaScript自诞生以来，发展进化的比较缓慢。每隔几年才会产生新的内容。ECMAScript在1997年成为JavaScript的语言实现规范。ECMAScript已经发布了几个版本如：ES3，ES5，ES6等等。
-![java-javascript](/img/in-post/ES6-features-translate/history-javascript-evolution.png)
+![java-javascript](/img/in-post/ES6-features-translate/history-javascript-evolution-es6.png)
 如你所见，从版本ES3，ES5和ES6分别间隔了10年和6年。像ES6这种大量修改再发布的旧模式已经被每年都做一些小的修改或更新的模式所代替了。
 
 # 2.浏览器支持
