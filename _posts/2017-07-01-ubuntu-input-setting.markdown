@@ -22,7 +22,9 @@ tags:
 
 ![java-javascript](/img/in-post/ubuntu/input-setting/language-setting-fcitx.png)
 
-#### 2.找到相应软件的shell脚本文件也就是.sh文件，我这里是配置WebStorm，就找到WebStorm下bin/WebStorm.sh。
+#### 2.修改应用的shell脚本
+
+找到相应软件的shell脚本文件也就是.sh文件，我这里是配置WebStorm，就找到WebStorm下bin/WebStorm.sh。
 
 编辑文件在文件的开头加上如下三行配置：
 
