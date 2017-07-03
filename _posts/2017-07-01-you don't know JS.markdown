@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "You Don't Know JavaScript"
-subtitle:   " \"Chapter 1:What is Scope?\""
+title:      "What is Scope?"
+subtitle:   " \"You Don't Know JavaScript\""
 date:       2017-07-01 10:00:00
 author:     "Wolfdu"
 header-img: "img/in-post/YouDon'tKnowJS/you-don't-know-js.jpg"
