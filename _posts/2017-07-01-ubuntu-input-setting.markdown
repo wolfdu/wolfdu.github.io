@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Ubuntu study notes"
-subtitle:   " \"Ubuntu下输入法不能输入中文\""
+title:      "Ubuntu下输入法不能输入中文"
+subtitle:   " \"Ubuntu study notes\""
 date:       2017-07-01 10:00:00
 author:     "Wolfdu"
 header-img: "img/in-post/ubuntu/ubuntu-home.jpg"
