@@ -4,7 +4,7 @@ title:      "What is Scope?"
 subtitle:   " \"You Don't Know JavaScript\""
 date:       2017-07-01 10:00:00
 author:     "Wolfdu"
-header-img: "img/in-post/YouDon'tKnowJS/you-don't-know-js.jpg"
+header-img: "img/in-post/ydkjs/you-dont-know-js-home.jpg"
 catalog:    true
 tags:
     - JavaScript
