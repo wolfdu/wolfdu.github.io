@@ -39,6 +39,7 @@ tags:
 	
 	npm config delete proxy
 
+<<<<<<< HEAD
 # Intellij idea
 
 常用快捷键(*按使用频率整理*)：
@@ -56,3 +57,5 @@ tags:
 
 万能定位：Ctrl+Shift+N
 
+=======
+>>>>>>> be1f4e4de8e29b8b6a051d67a8d93ab2014a8298
