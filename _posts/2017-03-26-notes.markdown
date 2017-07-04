@@ -53,3 +53,6 @@ tags:
 	自动完成：Ctrl+Shift+Enter
 	显示当前文件结构: Ctrl+f12
 	优化import自动去除无用的import语句: Ctrl + Alt + O 
+
+万能定位：Ctrl+Shift+N
+
