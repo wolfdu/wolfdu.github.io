@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "What is Scope?"
-subtitle:   " \"You Don't Know JavaScript\""
+subtitle:   " \"You Don't Know JavaScript（One）\""
 date:       2017-07-01 10:00:00
 author:     "Wolfdu"
 header-img: "img/in-post/ydkjs/you-dont-know-js-home.jpg"
@@ -12,7 +12,7 @@ tags:
 
 > 本文为You don't know JavaScript学习笔记
 
-# 什么是作用域
+# 1.什么是作用域
 
 ## 1.1 编译原理（compiler theory）
 
