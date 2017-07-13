@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "What is Scope?（1）"
-subtitle:   " \"You Don't Know JavaScript\""
+title:      "Chapter 1:What is Scope?"
+subtitle:   " \"You Don't Know JS: Scope & Closures\""
 date:       2017-07-01 10:00:00
 author:     "Wolfdu"
 header-img: "img/in-post/ydkjs/you-dont-know-js-home.jpg"

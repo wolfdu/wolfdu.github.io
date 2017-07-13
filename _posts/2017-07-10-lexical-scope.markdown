@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Lexical Scope（2）"
-subtitle:   " \"You Don't Know JavaScript\""
+title:      "Chapter 2:Lexical Scope"
+subtitle:   " \"You Don't Know JS: Scope & Closures\""
 date:       2017-07-10 10:00:00
 author:     "Wolfdu"
 header-img: "img/in-post/ydkjs/JavaScript-logo.png"

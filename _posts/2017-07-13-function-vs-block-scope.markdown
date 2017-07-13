@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Function vs. Block Scope（3）"
-subtitle:   " \"You Don't Know JavaScript\""
+title:      "Chapter 3:Function vs. Block Scope"
+subtitle:   " \"You Don't Know JS: Scope & Closures\""
 date:       2017-07-12 19:00:00
 author:     "Wolfdu"
 header-img: "img/in-post/ydkjs/JavaScript-logo.png"
