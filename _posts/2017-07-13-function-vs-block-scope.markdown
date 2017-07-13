@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Chapter 3:Function vs. Block Scope"
+title:      "Chapter 3: Function vs. Block Scope"
 subtitle:   " \"You Don't Know JS: Scope & Closures\""
 date:       2017-07-12 19:00:00
 author:     "Wolfdu"

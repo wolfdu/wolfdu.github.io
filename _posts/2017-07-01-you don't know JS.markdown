@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Chapter 1:What is Scope?"
+title:      "Chapter 1: What is Scope?"
 subtitle:   " \"You Don't Know JS: Scope & Closures\""
 date:       2017-07-01 10:00:00
 author:     "Wolfdu"
