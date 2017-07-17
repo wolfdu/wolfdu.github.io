@@ -1,0 +1,179 @@
+---
+layout:     post
+title:      "Chapter 4: Hoisting"
+subtitle:   " \"You Don't Know JS: Scope & Closures\""
+date:       2017-07-17 19:00:00
+author:     "Wolfdu"
+header-img: "img/in-post/ydkjs/JavaScript-logo.png"
+catalog:    true
+tags:
+    - JavaScript
+---
+
+> 本文为You don't know JavaScript学习笔记
+
+# 1.提升（Hoisting）
+
+通过学习前面的几章内容，我们已经熟悉了函数作用域和块作用域中不同的声明变量的位置和方式
+将变量分配给作用域相关的原理。
+
+但是作用域同其中变量的声明出现的位置有着微妙的联系。
+
+## 1.1 声明赋值顺序
+
+分析如下代码：
+
+    a = 2;
+    var a;
+    console.log(a);
+
+最终在控制台会输出什么呢？
+
+undefined？？ a的声明在后面，所以被重新赋值了？？
+
+真正结果是2。
+
+分析如下代码：
+
+    console.log(a);
+    var a = 2;
+
+这段代码又会输出什么呢？
+
+2？？ 或者抛出异常ReferenceError？？
+
+不幸的是这里会输出undefined。
+
+到底发生了什么？？
+
+## 1.2 编译阶段
+
+还记得在第一章中，引擎在运行代码前会首先对其进行编译，编译阶段有部分工作就是找到所有的声明
+，并用合适的作用域将他们关联起来。
+
+因此，包括变量和函数在内的所有声明都会在任何代码执行前进行处理。
+
+在上面的的第一段代码中实际处理如下：
+
+    var a;
+    a = 2;
+    console.log(2);//2
+
+类似第二段代码：
+
+    var a;
+    console.log(a);//undefined
+    a = 2;
+
+因此，变量和函数声明的位置被“移动”到了最上面的过程就叫做**提升（Histing）**,也就是说先声明
+后赋值。
+
+> 只有声明本身会被提升，赋值或其他运行逻辑会留在原地。
+
+分析如下代码：
+
+    foo();
+
+    function foo(){
+        console.log(a);
+        var a = ;
+    }
+
+上面，foo()函数的声明被提升了（还包含实际函数的隐含值），所以在第一行中调用可以正常执行。
+
+值得注意的是，每个作用域都会进行变量的提升。如上foo(...)函数自身也会在内部对`var a`进行提升
+（显然不是提升到了外部作用域）。
+
+因此实际运行如下：
+
+    function foo(){
+        var a ;
+        console.log(a);
+        a = 2;
+    }
+
+    foo();
+
+分析如下代码：
+
+    foo();//TypeError not ReferenceError
+
+    var foo = function bar(){...};
+
+上述代码中，标识符foo()被提升了并分配在当前作用域，所以调用时没有抛出ReferenceError异常。
+但是对foo并没有赋值，所以foo()对undefined进行函数调用为非法操作，所有抛出TypeError异常。
+
+可以看出，函数声明会被提升但是函数表达式不会被提升。
+
+> **函数声明:**
+
+>  `function funDeclaration(){...}`
+
+>**函数表达式:**
+
+> `var funExpression = function(){...}`
+
+## 1.3 函数优先
+
+函数声明和变量声明都会被提升，那么当函数和变量重名的时候谁会优先呢？
+
+分析如下代码：
+
+    foo();//1
+
+    var foo;
+
+    function foo(){
+        console.log(1);
+    }
+
+    foo = function(){
+        console.log(2);
+    };
+
+这里会输出1，而不是2也不是TypeError。
+
+这段代码引擎会这样理解：
+
+    function foo(){
+        console.log(1);
+    }
+
+    foo();
+
+    foo = function(){
+        console.log(2);
+    };
+
+尽管`var foo`出现在`function foo(){...}`前面，但是他说重复的声明，因此被忽略了，因为
+函数声明会被提升到普通变量之前。
+
+> 尽管`var`声明被覆盖了，但是出现在后面的函数声明还是可以覆盖前面的。
+
+    foo();//3
+
+    function foo(){
+        console.log(1);
+    }
+
+    var foo = function(){
+        console.log(2);
+    };
+
+    function foo(){
+        console.log(3);
+    }
+
+所以在同一个作用域中不要进行重复的定义变量或者函数，这些都会导致一些奇怪的问题。是不明智的做法。
+
+## 小结
+
+我们习惯将`var a = 2;`看做一个声明，而实际上JavaScript引擎将他分解为两个步骤，一个编译
+阶段处理`var a`，另一个执行阶段处理`a = 2`。
+
+在作用域中无论声明出现声明地方，都会在代码执行前提升到当前作用域顶部，称之为提升。
+
+函数声明中的隐含值也会被提升，但是函数表达式的赋值操作不会被提升。
+
+要避免重复声明，当var声明和函数声明重复时函数声明会被提升到普通声明之前，这样会带来很多麻烦。
+
