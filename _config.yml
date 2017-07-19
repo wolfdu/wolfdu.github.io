@@ -7,7 +7,7 @@ description: "Cool Blog"
 keyword: ""
 url: "https://wolfdu.github.io/"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
-
+repository: wolfdu.github.io
 
 
 # SNS settings
@@ -53,7 +53,9 @@ gitment_username: wolfdu
 # Share component is depend on Comment so we can NOT use share only.
 gitment_share: true                     # set to false if you want to use Comment without Sharing
 
-
+# Application:wolfduBlog
+wolfdu_blog_client_id: ac90ecf08ecc3ba2fa41
+wolfdu_blog_client_secret: fc7467b2905608263c4c3e8f233272c3dfa4dba2
 
 
 # Analytics settings

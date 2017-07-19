@@ -89,11 +89,11 @@ layout: default
                 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
                 <script>
                     var gitment = new Gitment({
-                        owner: 'wolfdu',
-                        repo: 'wolfdu.github.io',
+                        owner: '{{site.github_username}}',
+                        repo: '{{site.repository}}',
                         oauth: {
-                            client_id: 'ac90ecf08ecc3ba2fa41',
-                            client_secret: 'fc7467b2905608263c4c3e8f233272c3dfa4dba2',
+                            client_id: '{{site.wolfdu_blog_client_id}}',
+                            client_secret: '{{site.wolfdu_blog_client_secret}}',
                         }
                     })
                     gitment.render('container')
