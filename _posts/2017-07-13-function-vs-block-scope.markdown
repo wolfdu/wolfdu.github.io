@@ -244,10 +244,10 @@ a关键字可以将变量绑定到所在的任意的作用域中（通常是块�
             bar = something(bar);
             console.log(bar);
         }
-        console.log();//ReferenceError
+        console.log(bar);//ReferenceError
     }
 
-    console.log();//ReferenceError
+    console.log(bar);//ReferenceError
 
 只要声明是有效的，在任意的位置都可以使用`{...}`括号来为let创建一个用于绑定的块。
 
