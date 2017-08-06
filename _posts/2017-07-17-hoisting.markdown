@@ -76,7 +76,7 @@ undefined？？ a的声明在后面，所以被重新赋值了？？
 
     function foo(){
         console.log(a);
-        var a = ;
+        var a = 2;
     }
 
 上面，foo()函数的声明被提升了（还包含实际函数的隐含值），所以在第一行中调用可以正常执行。
