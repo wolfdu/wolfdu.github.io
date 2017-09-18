@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="96e26467-ecbf-457d-8ed8-d99b22fd6e43" name="Default" comment="what:你不知道的JavaScript-scope-closure 学习笔记&#10;why:&#10;how:">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/20170820-日记.markdown" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_posts/2017-09-11-analysis-this.markdown" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,27 +24,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2017-09-11-analysis-this.markdown" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2017-09-11-analysis-this.markdown">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="198">
-                <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="16" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <js_state />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
               <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2017-09-11-analysis-this.markdown" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2017-09-11-analysis-this.markdown">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="44">
+                <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="46" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
             </state>
           </provider>
         </entry>
@@ -103,6 +102,7 @@
         <option value="$PROJECT_DIR$/_posts/20170911-analysis-this.markdown" />
         <option value="$PROJECT_DIR$/_posts/2017-09-11-analysis-this.markdown" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/_posts/x.markdown" />
       </list>
     </option>
   </component>
@@ -310,7 +310,7 @@
       <workItem from="1505304947072" duration="8045000" />
       <workItem from="1505528438155" duration="15348000" />
       <workItem from="1505739444176" duration="7092000" />
-      <workItem from="1505747142324" duration="620000" />
+      <workItem from="1505747142324" duration="2372000" />
     </task>
     <task id="LOCAL-00001" summary="what:相关文章开题，Ubuntu输入法设置&#10;why:&#10;how:">
       <created>1498888190629</created>
@@ -491,7 +491,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="199233000" />
+    <option name="totallyTimeSpent" value="200985000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -504,9 +504,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15137132" sideWeight="0.48843187" order="3" side_tool="false" content_ui="combo" x="842" y="64" width="235" height="1001" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15137132" sideWeight="0.48843187" order="3" side_tool="false" content_ui="combo" x="842" y="64" width="235" height="1001" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Grunt " active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11637704" sideWeight="0.5115681" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33767644" sideWeight="0.5018431" order="7" side_tool="true" content_ui="tabs" />
@@ -577,18 +576,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_posts/2017-04-25-ES6-features-translate.markdown">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="3234">
-            <caret line="147" column="98" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="98" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/ie8-f***.markdown" />
     <entry file="file://$PROJECT_DIR$/_posts/2017-07-10-lexical-scope.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
@@ -1104,11 +1091,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-09-11-analysis-this.markdown">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="198">
-            <caret line="9" column="16" lean-forward="false" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="16" />
+          <first_editor relative-caret-position="396">
+            <caret line="18" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="686" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor>
@@ -1117,11 +1112,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/_posts/2017-09-11-analysis-this.markdown">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="44">
+            <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="46" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
         </state>
       </provider>
     </entry>
