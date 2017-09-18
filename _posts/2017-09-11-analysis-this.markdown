@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Chapter 2: Analysis This"
+title:      "Chapter 2: Comprehensive analysis This"
 subtitle:   " \"You Don't Know JS: this & Object Prototypes\""
 date:       2017-09-18 22:19:00
 author:     "Wolfdu"
