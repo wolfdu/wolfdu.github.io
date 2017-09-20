@@ -41,7 +41,7 @@ gems: [jekyll-paginate]
 # document: http://jekyllrb.com/docs/configuration/#kramdown
 markdown: kramdown
 kramdown:
-  input: GFM                            # use Github Flavored Markdown !important
+input: GFM                            # use Github Flavored Markdown !important
 
 
 
@@ -89,10 +89,7 @@ friends: [
         title: "Code Dog",
         href: "http://blog.codedoge.com/"
   },{
-      title: "mrmeisen",
-      href: "https://mrmeisen.github.io/"
-  },{
       title: "Old Driver",
-      href: "http://me.ronggle.com/"
+      href: "https://ronggle.com/"
   }
 ]
