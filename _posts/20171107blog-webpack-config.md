@@ -30,4 +30,5 @@ tags:
         app: './admin/src/main.js'
     }
 
+vendor
 
