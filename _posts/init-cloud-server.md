@@ -24,7 +24,7 @@ tags:
 
     apt install npm
 
-    npm install n
+    npm install n -g
 
     n stable
 
@@ -35,11 +35,11 @@ tags:
     apt-get install nginx
 
     server{
-            listen 80;
+            listen 7070;
             server_name localhost;
 
             location / {
-                    alias /home/ubuntu/project/blog/admin;
+                    root /root/project/blog/admin/dist;
                     #index index.html;
                     try_files $uri $uri/ /index.html;
             }
@@ -49,5 +49,21 @@ tags:
                 root   html;
             }
     }
+
+gzip
+
+            gzip on;
+            gzip_disable "msie6";
+            gzip_min_length 1k;
+
+
+            # gzip_vary on;
+            # gzip_proxied any;
+            gzip_comp_level 6;
+            gzip_buffers 16 8k;
+            # gzip_http_version 1.1;
+            gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+
 
 
